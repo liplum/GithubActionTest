@@ -43,6 +43,4 @@ jobs:
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TODAY: ${{ steps.date.outputs.date }}
-
-      - name: Print date
         run: echo "$TODAY"
