@@ -44,3 +44,7 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           TODAY: ${{ steps.date.outputs.date }}
         run: echo "$TODAY"
+
+      - name: Test IF one
+        if: !startsWith(github.event.head_commit.message,"NR")
+        run: echo "startsWith() returns false"
