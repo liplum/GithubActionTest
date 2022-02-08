@@ -46,5 +46,5 @@ jobs:
         run: echo "$TODAY"
 
       - name: Test IF one
-        if: ${{ !startsWith(github.event.head_commit.message,"NR") }}$
+        if: ${{ !startsWith(github.event.head_commit.message,'NR') }}$
         run: echo "startsWith() returns false"
