@@ -18,7 +18,7 @@ jobs:
           git config --global user.name "liplum2"
           touch test-file.txt
           echo "For test 2" > test-file.txt
-          git add .
           git pull --rebase
+          git add .
           git commit --allow-empty -m "Back-end update"
           git push https://liplum:${{ secrets.PAT }}@github.com/liplum/GithubActionTest
