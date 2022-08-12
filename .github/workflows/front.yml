@@ -1,4 +1,4 @@
-name: Build Push Changes
+name: Test upload back-end
 on: push
 
 jobs:
@@ -19,4 +19,4 @@ jobs:
           rm TestEncoding.txt
           git add .
           git commit --allow-empty -m "Back-end update"
-          git push
+          git push https://liplum:${{ secrets.PAT }}@github.com/liplum/GithubActionTest
