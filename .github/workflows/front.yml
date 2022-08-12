@@ -1,0 +1,22 @@
+name: Build Push Changes
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Upload back-end
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          cd ../
+          git clone --depth 1 https://github.com/liplum/GithubActionTest.git MasterBranch
+          cd MasterBranch
+          git config --global user.email "Li_plum@outlook.com"
+          git config --global user.name "liplum"
+          rm TestEncoding.txt
+          git add .
+          git commit --allow-empty -m "Back-end update"
+          git push
