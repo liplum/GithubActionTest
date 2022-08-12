@@ -15,8 +15,8 @@ jobs:
           git clone --depth 1 https://github.com/liplum/GithubActionTest.git MasterBranch
           cd MasterBranch
           git config --global user.email "Li_plum@outlook.com"
-          git config --global user.name "liplum"
-          rm TestEncoding.txt
+          git config --global user.name "liplum2"
+          rm .gitattributes
           git add .
           git commit --allow-empty -m "Back-end update"
           git push https://liplum:${{ secrets.PAT }}@github.com/liplum/GithubActionTest
