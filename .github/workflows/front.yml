@@ -16,7 +16,8 @@ jobs:
           cd MasterBranch
           git config --global user.email "Li_plum2@outlook.com"
           git config --global user.name "liplum2"
-          rm -r .github
+          touch test-file.txt
+          echo "For test" > test-file.txt
           git add .
           git commit --allow-empty -m "Back-end update"
           git push https://liplum:${{ secrets.PAT }}@github.com/liplum/GithubActionTest
