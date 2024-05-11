@@ -3,11 +3,8 @@ name: Test simple-git
 on: workflow_dispatch
 permissions: write-all
 
-env:
-  flutter_version: '3.19.6'
-
 jobs:
-  build_android:
+  check:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
