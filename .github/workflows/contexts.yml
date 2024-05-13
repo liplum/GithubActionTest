@@ -4,7 +4,7 @@ on: [push, issues, pull_request, release, workflow_dispatch]
 permissions: write-all
 
 jobs:
-  check:
+  get:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -19,6 +19,6 @@ jobs:
         run: |
           cd tools && npm i && cd ..
 
-      - name: Get tags By simeple-git
+      - name: Get contexts
         run: |
-          node ./tools/contexts.js
+          node ./tools/contexts.js ${{ github }}
