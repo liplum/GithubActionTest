@@ -1,6 +1,6 @@
-name: Test simple-git
+name: Test GitHub Workflow contexts
 
-on: workflow_dispatch
+on: [push, issues, pull_request, release, workflow_dispatch]
 permissions: write-all
 
 jobs:
@@ -8,23 +8,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-          
+
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: 'npm'
+          cache: "npm"
           cache-dependency-path: tools/package-lock.json
 
       - name: Npm install
         run: |
           cd tools && npm i && cd ..
 
-      - name: Get tags manully
-        run: |
-          git tag
-
       - name: Get tags By simeple-git
         run: |
-          node ./tools/simple-git.mjs
+          node ./tools/contexts.js
