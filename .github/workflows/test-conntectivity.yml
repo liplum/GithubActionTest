@@ -5,10 +5,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: ping cr.liplum.net
-        run: |
-          ping cr.liplum.net
-
       - name: check cr.liplum.net
         run: |
           curl https://cr.liplum.net
