@@ -1,14 +1,16 @@
-name: Test GitHub Workflow contexts
+name: Set Output
 
-on: [push, issues, pull_request, release, workflow_dispatch]
+on: workflow_dispatch
 permissions: write-all
 
 jobs:
-  get:
+  check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
+        with:
+          fetch-depth: 0
+          
       - name: Install pnpm
         uses: pnpm/action-setup@v4
         with:
@@ -24,6 +26,10 @@ jobs:
         run: |
           cd tools && pnpm i && cd ..
 
-      - name: Get contexts
+      - name: Get tags manully
         run: |
-          node ./contexts.js ${{ github }}
+          git tag
+
+      - name: Get tags By simeple-git
+        run: |
+          node ./simple-git.mjs

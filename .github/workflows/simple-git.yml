@@ -11,15 +11,20 @@ jobs:
         with:
           fetch-depth: 0
           
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9
+
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: 'npm'
-          cache-dependency-path: tools/package-lock.json
+          node-version: 22
+          cache: 'pnpm'
+          cache-dependency-path: pnpm-lock.yaml
 
-      - name: Npm install
+      - name: Pnpm install
         run: |
-          cd tools && npm i && cd ..
+          cd tools && pnpm i && cd ..
 
       - name: Get tags manully
         run: |
@@ -27,4 +32,4 @@ jobs:
 
       - name: Get tags By simeple-git
         run: |
-          node ./tools/simple-git.mjs
+          node ./simple-git.mjs
