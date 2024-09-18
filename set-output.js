@@ -10,4 +10,12 @@ console.log(githubState)
 console.log(githubPath)
 console.log(githubEnv)
 
-await fs.promises.appendFile(githubOutput, "TEST=Liplum")
+await fs.promises.appendFile(githubOutput, "TEST=LiplumOutput", {
+  encoding: 'utf8'
+})
+await fs.promises.appendFile(githubState, "TEST=LiplumState", {
+  encoding: 'utf8'
+})
+await fs.promises.appendFile(githubEnv, "TEST=LiplumEnv", {
+  encoding: 'utf8'
+})

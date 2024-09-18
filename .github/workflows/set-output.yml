@@ -34,3 +34,11 @@ jobs:
       - name: Print output
         run: |
           echo ${{ steps.task.outputs.TEST }}
+      
+      - name: Print state
+        run: |
+          echo $STATE_TEST
+      
+      - name: Print env
+        run: |
+          echo $TEST
