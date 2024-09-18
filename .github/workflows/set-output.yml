@@ -35,6 +35,7 @@ jobs:
       - name: Print output
         run: |
           echo ${{ steps.task.outputs.TEST }}
+          echo ${{ steps.task.outputs.MULTILINES }}
       
       - name: Print state
         run: |
