@@ -28,4 +28,4 @@ jobs:
 
       - name: Set output
         run: |
-          node ./set-output.mjs
+          node ./set-output.js

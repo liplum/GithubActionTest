@@ -32,4 +32,4 @@ jobs:
 
       - name: Get tags By simeple-git
         run: |
-          node ./simple-git.mjs
+          node ./simple-git.js
