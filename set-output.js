@@ -10,18 +10,18 @@ console.log(githubState)
 console.log(githubPath)
 console.log(githubEnv)
 
-await fs.promises.appendFile(githubOutput, "TEST=LiplumOutput", {
+await fs.promises.appendFile(githubOutput, "TEST=LiplumOutput\n", {
   encoding: 'utf8'
 })
-await fs.promises.appendFile(githubState, "TEST=LiplumState", {
+await fs.promises.appendFile(githubState, "TEST=LiplumState\n", {
   encoding: 'utf8'
 })
-await fs.promises.appendFile(githubEnv, "TEST=LiplumEnv", {
+await fs.promises.appendFile(githubEnv, "TEST=LiplumEnv\n", {
   encoding: 'utf8'
 })
 
 const multilines = `Hello, I'm Liplum.%0AWelcome to my repository.%0AI would do some testing here.%0A`
 
-await fs.promises.appendFile(githubOutput, `MULTILINES="${multilines}"`, {
+await fs.promises.appendFile(githubOutput, `MULTILINES=${multilines}\n`, {
   encoding: 'utf8'
 })
