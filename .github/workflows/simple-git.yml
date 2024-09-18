@@ -24,7 +24,7 @@ jobs:
 
       - name: Pnpm install
         run: |
-          cd tools && pnpm i && cd ..
+          pnpm i && cd ..
 
       - name: Get tags manully
         run: |

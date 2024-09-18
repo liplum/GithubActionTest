@@ -24,12 +24,8 @@ jobs:
 
       - name: Pnpm install
         run: |
-          cd tools && pnpm i && cd ..
+          pnpm i && cd ..
 
-      - name: Get tags manully
+      - name: Set output
         run: |
-          git tag
-
-      - name: Get tags By simeple-git
-        run: |
-          node ./simple-git.mjs
+          node ./set-output.mjs
