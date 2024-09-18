@@ -27,5 +27,10 @@ jobs:
           pnpm i
 
       - name: Set output
+        id: task
         run: |
           node ./set-output.js
+      
+      - name: Print output
+        run: |
+          echo ${{ steps.task.outputs.TEST }}

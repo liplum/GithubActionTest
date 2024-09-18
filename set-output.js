@@ -1,7 +1,13 @@
 import env from "@liplum/env"
 import * as fs from "fs"
 
-console.log(env("GITHUB_OUTPUT").raw())
-console.log(env("GITHUB_STATE").raw())
-console.log(env("GITHUB_PATH").raw())
-console.log(env("GITHUB_PATH").raw())
+const githubOutput = env("GITHUB_OUTPUT").string()
+const githubState = env("GITHUB_STATE").string()
+const githubPath = env("GITHUB_PATH").string()
+const githubEnv = env("GITHUB_ENV").string()
+console.log(githubOutput)
+console.log(githubState)
+console.log(githubPath)
+console.log(githubEnv)
+
+await fs.promises.appendFile(githubOutput, "TEST=Liplum")
