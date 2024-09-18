@@ -20,11 +20,7 @@ await fs.promises.appendFile(githubEnv, "TEST=LiplumEnv", {
   encoding: 'utf8'
 })
 
-const multilines = `
-Hello, I'm Liplum.
-Welcome to my repository.
-I would do some testing here.
-`
+const multilines = `Hello, I'm Liplum.\nWelcome to my repository.\nI would do some testing here.\n`
 
 await fs.promises.appendFile(githubOutput, `MULTILINES="${multilines}"`, {
   encoding: 'utf8'
