@@ -30,6 +30,7 @@ jobs:
         id: task
         run: |
           node ./set-output.js
+          echo $STATE_TEST
       
       - name: Print output
         run: |
