@@ -22,7 +22,7 @@ jobs:
 
       - name: Pnpm install
         run: |
-          pnpm i && cd ..
+          pnpm i
 
       - name: Get contexts
         run: |
